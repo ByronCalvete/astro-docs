@@ -45,3 +45,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+## Resources
+
+- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+- [YAML frontmatter](https://assemble.io/docs/YAML-front-matter.html)

@@ -1,34 +1,25 @@
 ---
+import BaseLayout from "./BaseLayout.astro"
 const { frontmatter } = Astro.props
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{frontmatter.title}</title>
-    <style>
-      h1 {
-        color: purple;
-      }
-      span {
-        border: 2px solid purple;
-        background-color: rgba(128, 0, 128, .2);
-        padding: 5px 10px;
-        border-radius: 15px;
-        margin-right: 10px;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>{frontmatter.title}</h1>
-    <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>Written by: {frontmatter.author}</p>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt}>
-    <slot />
-    {frontmatter.tags.map(t => <span>{t}</span>)}
-  </body>
-</html>
+<BaseLayout pageTitle={frontmatter.title}>
+  <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+  <p><em>{frontmatter.description}</em></p>
+  <p>Written by: {frontmatter.author}</p>
+  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt}>
+  <slot />
+  {frontmatter.tags.map(t => <span>{t}</span>)}
+</BaseLayout>
+
+<style>
+  span {
+    border: 2px solid purple;
+    background-color: rgba(128, 0, 128, .2);
+    font-size: .8rem;
+    font-style: oblique;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+</style>

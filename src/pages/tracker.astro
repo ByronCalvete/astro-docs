@@ -1,5 +1,7 @@
 ---
+import '../styles/global.css';
 
+const pageTitle = 'My Astro Book Tracker';
 ---
 
 <html lang="en">
@@ -9,13 +11,18 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Tracker - Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/tracker">Book Tracker</a>
 
-    <h1>My Book Tracker</h1>
+    <h1>{pageTitle}</h1>
     <p>This is where I will post my journey reading books.</p>
+    <ul>
+			<li><a href="./books/book-1">Book 1</a></li>
+      <li><a href="./books/book-2">Book 2</a></li>
+      <li><a href="./books/book-3">Book 3</a></li>
+		</ul>
   </body>

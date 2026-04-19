@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const pageTitle = 'My Astro Book Tracker';
 ---
@@ -14,9 +16,7 @@ const pageTitle = 'My Astro Book Tracker';
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/tracker">Book Tracker</a>
+    <Header />
 
     <h1>{pageTitle}</h1>
     <p>This is where I will post my journey reading books.</p>
@@ -25,4 +25,8 @@ const pageTitle = 'My Astro Book Tracker';
       <li><a href="./books/book-2">Book 2</a></li>
       <li><a href="./books/book-3">Book 3</a></li>
 		</ul>
+    <Footer />
+    <script>
+      import '../scripts/menu.js';
+    </script>
   </body>
